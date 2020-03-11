@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css?family=Sen&display=swap');
+
+* { box-sizing: border-box; }
+
+:root {
+    --primary-color: rgb(0, 0, 0);
+}
+
+body {
+    margin: 0;
+    background: rgb(131,58,180);
+    background: linear-gradient(120deg, rgba(131,58,180,1) 0%, rgb(211, 41, 41) 50%, rgba(252,161,69,1) 100%);
+    background-size: 600% 600%; 
+    animation: gradient 30s ease infinite; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Sen, sans-serif;
+    letter-spacing: 2px;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0% 50% }
+}
+
+.container {
+    width: 480px;
+    height: 629px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    box-shadow: 0 5px 30px 10px rgba(0, 0, 0, .4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+}
+
+/* Form */
+form {
+    width: 90%; 
+}
+
+.form-group {
+    height: 65px; 
+}
+
+.form-label {
+    position: relative;
+    bottom: 3px;
+}
+
+.form-input {
+    width: 100%;
+    height: 34px;
+    padding: 5px;
+    border: none;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    display: block;
+    transition: all 0.3s;
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+    color: white;
+    background-color: var(--primary-color);
+    border: none;
+    height: 50px;
+    width: 100%;
+    font-family: Sen, sans-serif;
+    font-size: 20px;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+button:hover {
+    filter: brightness(120%);
+}
+
+button:focus {
+    outline: none;
+}
+
+#message-container {
+    border: 1px solid green;
+    border-radius: 5px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    color: green;
+}
+
+/* Date Input */
+::-webkit-clear-button {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+::-webkit-inner-spin-button {
+    display: none;
+}
+
+::-webkit-calendar-picker-indicator {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+::-webkit-calendar-picker-indicator:hover {
+    background-color: transparent;
+}
+
+input[type="date"] {
+    text-transform: uppercase;
+}
