@@ -10,31 +10,36 @@
   <div class="container">
     <h1>Sign Up Today!</h1>
     <!-- Form -->
-    <form id="signUpForm">
+    <form id="signUpForm" novalidate>
       <div class="form-group">
         <label class="form-label" for="name">Full Name</label>
-        <input class="form-input" type="text" id="name" placeholder="Full Name">
+        <input class="form-input" type="text" id="name" name="name" placeholder="Full Name" 
+               required minlength="3" maxlength="12">
       </div>
       <div class="form-group">
         <label class="form-label" for="phone">Phone Number</label>
-        <input class="form-input" type="text" id="phone" placeholder="555-555-5555">
+        <input class="form-input" type="tel" id="phone" name="phone" placeholder="555-555-5555" 
+               required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
       </div>
       <div class="form-group">
         <label class="form-label" for="email">Email Address</label>
-        <input class="form-input" type="text" id="email" placeholder="email@address.com">
+        <input class="form-input" type="email" id="email" name="email" placeholder="email@address.com" required>
       </div>
       <div class="form-group">
-        <label class="form-label" for="birthday">Birthday</label>
-        <input class="form-input" type="date" id="birthday">
-      </div>  
+        <label class="form-label" for="website">Website URL</label>
+        <input class="form-input" type="url" id="website" name="website" placeholder="https://jacinto.design" required>
+      </div>
       <div class="form-group">
         <label class="form-label" for="password1">Password</label>
-        <input class="form-input" type="password" id="password1" placeholder="Enter Password">
+        <input class="form-input" type="password" id="password1" placeholder="Enter Password" 
+               required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" minlength="8"
+               title="Please include at least 1 uppercase character, 1 lowercase character, and 1 number.">
       </div>
       <div class="form-group">
         <label class="form-label" for="password2">Confirm Password</label>
-        <input class="form-input" type="password" id="password2" placeholder="Confirm Password">
-    </div>
+        <input class="form-input" type="password" id="password2" placeholder="Confirm Password" required
+               required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" minlength="8">
+      </div>
       <button type="submit">Register</button>
     </form>
     <!-- Error/Success Message -->

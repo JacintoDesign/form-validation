@@ -86,12 +86,20 @@ button:focus {
 }
 
 #message-container {
-    border: 1px solid green;
+    border: 1px solid black;
     border-radius: 5px;
     width: 90%;
-    display: flex;
+    display: none;
     justify-content: center;
-    color: green;
+    color: black;
+}
+
+input:valid {
+    border: 1px solid green;
+    content: '✓';
+}
+input:invalid {
+    border: 1px solid red;
 }
 
 /* Date Input */
