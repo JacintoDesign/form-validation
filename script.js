@@ -40,7 +40,7 @@ form.addEventListener('submit', function(e) {
   }
 
   // If form is valid and passwords match
-  if (isValidForm === true && passwordsMatch === true) {
+  if (isValidForm === true && password1El.value && password2El.value && passwordsMatch === true) {
     // Style main message for success
     message.innerHTML = '<h3>Successfully Registered!</h3>';
     message.style.color = 'green';
