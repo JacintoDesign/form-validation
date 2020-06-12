@@ -4,13 +4,13 @@ const password2El = document.getElementById('password2');
 const messageContainer = document.querySelector('.message-container');
 const message = document.getElementById('message');
 
-function storeFormData(e) {
+function storeFormData() {
   const user = {
-    name: e.srcElement[0].value,
-    phone: e.srcElement[1].value,
-    email: e.srcElement[2].value,
-    website: e.srcElement[3].value,
-    password: e.srcElement[4].value,
+    name: form.name.value,
+    phone: form.phone.value,
+    email: form.email.value,
+    website: form.website.value,
+    password: form.password.value,
   };
   // Do something with user data
   console.log(user);
@@ -51,7 +51,7 @@ function validateForm(e) {
     message.style.color = 'green';
     messageContainer.style.borderColor = 'green';
     // Store User Data
-    storeFormData(e);
+    storeFormData();
   }
 }
 
