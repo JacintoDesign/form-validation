@@ -26,6 +26,7 @@ function validateForm(e) {
     message.textContent = 'Please fill out all fields.';
     message.style.color = 'red';
     messageContainer.style.borderColor = 'red';
+    return;
   }
   // Check to see if both password fields match
   let passwordsMatch = false;
@@ -34,15 +35,14 @@ function validateForm(e) {
     passwordsMatch = true;
     password1El.style.borderColor = 'green';
     password2El.style.borderColor = 'green';
-  }
-  if (password1El.value && password2El.value && password1El.value !== password2El.value) {
+  } else if (password1El.value && password2El.value && password1El.value !== password2El.value) {
     // If they don't match, border color of input to red, change message
-    passwordsMatch = false;
     message.style.color = 'red';
     messageContainer.style.borderColor = 'red';
     password1El.style.borderColor = 'red';
     password2El.style.borderColor = 'red';
     message.textContent = 'Make sure passwords match.';
+    return;
   }
   // If form is valid and passwords match
   if (isValidForm && passwordsMatch) {
