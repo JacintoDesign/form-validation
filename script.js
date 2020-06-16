@@ -22,6 +22,8 @@ function validateForm() {
   if (password1El.value === password2El.value) {
     // If they match, set value to true
     passwordsMatch = true;
+    password1El.style.borderColor = 'green';
+    password2El.style.borderColor = 'green';
   } else {
     // If they don't match, border color of input to red, change message
     message.textContent = 'Make sure passwords match.';
