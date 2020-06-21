@@ -5,6 +5,7 @@ const messageContainer = document.querySelector('.message-container');
 const message = document.getElementById('message');
 
 let isValid = false;
+let passwordsMatch = false;
 
 function validateForm() {
   // Use HTML constraint API to check form validity
@@ -18,12 +19,14 @@ function validateForm() {
     return;
   }
   // Check to see if both password fields match
-  let passwordsMatch = false;
   if (password1El.value === password2El.value) {
-    // If they match, set value to true
+    // If they match, set value to true and borders to green
     passwordsMatch = true;
+    password1El.style.borderColor = 'green';
+    password2El.style.borderColor = 'green';
   } else {
     // If they don't match, border color of input to red, change message
+    passwordsMatch = false;
     message.textContent = 'Make sure passwords match.';
     message.style.color = 'red';
     messageContainer.style.borderColor = 'red';
@@ -57,7 +60,7 @@ function processFormData(e) {
   // Validate Form
   validateForm();
   // Submit Form if Valid
-  if (isValid) {
+  if (isValid && passwordsMatch) {
     storeFormData();
   }
 }
